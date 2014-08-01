@@ -8,6 +8,7 @@
 ```
 
 *UString* is an experimental replacement to the standard String class, that aims to:
+
 1. Keep the internal storage of strings as UTF-16
 2. Use it as a chain of UTF-32 codepoints
 
