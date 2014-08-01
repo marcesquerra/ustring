@@ -9,7 +9,8 @@ import scala.collection.{TraversableOnce, GenTraversable, TraversableLike}
 /**
  * Created by Marc Esquerrà on 30/07/2014.
  */
-class UString private(private val data: Vector[String]) extends TraversableLike[UCharacter, UString]
+class UString private(private val data: Vector[String]) extends Traversable[UCharacter]
+                                                           with TraversableLike[UCharacter, UString]
                                                            with GenTraversable[UCharacter]
                                                            with TraversableOnce[UCharacter]
 {
