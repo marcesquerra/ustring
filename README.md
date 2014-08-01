@@ -7,6 +7,8 @@
     println(str)
 ```
 
+<br/>
+<br/>
 
 
 *UString* is an experimental replacement to the standard String class, that aims to:
@@ -14,7 +16,8 @@
 1. Keep the internal storage of strings as UTF-16
 2. Use it as a chain of UTF-32 codepoints
 
-
+<br/>
+<br/>
 
 This means the appearance of two new types:
 
@@ -22,7 +25,8 @@ This means the appearance of two new types:
 
 *UString*: A `Traversable[UCharacter]` (internally represented with UTF-16 characters)
 
-
+<br/>
+<br/>
 
 Consequences:
 * The size() and the access per index have a linear cost (i.e. the bigger the String, bigger the time to execute this two methods)
@@ -30,6 +34,8 @@ Consequences:
 
 Given that, why not internally store a `Vector[String]` inside each UString? With that, there is no change in the performance characteristics I've mentioned before *and* suddenly the concatenation of string is (nearly) constant time.
 
+<br/>
+<br/>
 
 
 ## Features
