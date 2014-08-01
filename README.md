@@ -1,5 +1,7 @@
 # UString
 
+A truly Unicode String for Scala
+
 ```scala
 
     val str = u"Hello World"
