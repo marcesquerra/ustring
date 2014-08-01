@@ -15,6 +15,7 @@
 This means the appearance of two new types:
 
 *UCharacter*: The UTF-32 of the Char type
+
 *UString*: A `Traversable[UCharacter]` (internally represented with UTF-16 characters)
 
 Consequences:
