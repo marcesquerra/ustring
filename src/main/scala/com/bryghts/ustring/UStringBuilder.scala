@@ -6,11 +6,11 @@ import scala.collection.mutable.Builder
  * Created by Marc Esquerrà on 31/07/2014.
  */
 
-class UStringBuilder extends Builder[UCharacter, UString]
+class UStringBuilder extends Builder[UChar, UString]
 {
     val internal = StringBuilder.newBuilder
 
-    override def +=(elem: UCharacter) = {
+    override def +=(elem: UChar) = {
         Character.toChars(elem.codePoint).foreach(c => internal += c)
         this
     }

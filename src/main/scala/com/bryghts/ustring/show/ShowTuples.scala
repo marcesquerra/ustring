@@ -2,17 +2,19 @@ package com.bryghts.ustring
 package show
 
 /**
- * Created by Marc Esquerrà on 01/08/2014.
+ *Created by Marc Esquerrà on 01/08/2014.
  */
-trait ShowTuples
+trait ShowTuples extends ShowStrings
 {
 
-    implicit def showTuple1[A : Show]: Show[(A)] =    Show{case (a) => u"(" + a.toUString + u")"}
+    implicit def showTuple1[A : Show]: Show[Tuple1[A]] =    Show{case (a) => u"(" + a + u")"}
+
+
     implicit def showTuple2[A : Show,
                             B : Show]: Show[(A,
                                              B)] =    Show{case (a,
-                                                                 b) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u")"}
+                                                                 b) =>  u"(" + a + u", " +
+                                                                               b + u")"}
 
 
     implicit def showTuple3[A : Show,
@@ -21,9 +23,9 @@ trait ShowTuples
                                              B,
                                              C)] =    Show{case (a,
                                                                  b,
-                                                                 c) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u")"}
+                                                                 c) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u")"}
 
     implicit def showTuple4[A : Show,
                             B : Show,
@@ -34,10 +36,10 @@ trait ShowTuples
                                              D)] =    Show{case (a,
                                                                  b,
                                                                  c,
-                                                                 d) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u")"}
+                                                                 d) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u")"}
 
     implicit def showTuple5[A : Show,
                             B : Show,
@@ -51,11 +53,11 @@ trait ShowTuples
                                                                  b,
                                                                  c,
                                                                  d,
-                                                                 e) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u")"}
+                                                                 e) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u")"}
 
     implicit def showTuple6[A : Show,
                             B : Show,
@@ -72,12 +74,12 @@ trait ShowTuples
                                                                  c,
                                                                  d,
                                                                  e,
-                                                                 f) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u")"}
+                                                                 f) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u")"}
 
     implicit def showTuple7[A : Show,
                             B : Show,
@@ -97,13 +99,13 @@ trait ShowTuples
                                                                  d,
                                                                  e,
                                                                  f,
-                                                                 g) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u")"}
+                                                                 g) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u")"}
 
     implicit def showTuple8[A : Show,
                             B : Show,
@@ -126,14 +128,14 @@ trait ShowTuples
                                                                  e,
                                                                  f,
                                                                  g,
-                                                                 h) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u")"}
+                                                                 h) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u")"}
 
     implicit def showTuple9[A : Show,
                             B : Show,
@@ -159,15 +161,15 @@ trait ShowTuples
                                                                  f,
                                                                  g,
                                                                  h,
-                                                                 i) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u")"}
+                                                                 i) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u")"}
 
     implicit def showTuple10[A : Show,
                             B : Show,
@@ -196,16 +198,16 @@ trait ShowTuples
                                                                  g,
                                                                  h,
                                                                  i,
-                                                                 j) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u")"}
+                                                                 j) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u")"}
 
     implicit def showTuple11[A : Show,
                             B : Show,
@@ -237,17 +239,17 @@ trait ShowTuples
                                                                  h,
                                                                  i,
                                                                  j,
-                                                                 k) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u")"}
+                                                                 k) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u")"}
 
     implicit def showTuple12[A : Show,
                             B : Show,
@@ -282,18 +284,18 @@ trait ShowTuples
                                                                  i,
                                                                  j,
                                                                  k,
-                                                                 l) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u")"}
+                                                                 l) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u")"}
 
     implicit def showTuple13[A : Show,
                             B : Show,
@@ -331,19 +333,19 @@ trait ShowTuples
                                                                  j,
                                                                  k,
                                                                  l,
-                                                                 m) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u")"}
+                                                                 m) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u")"}
 
     implicit def showTuple14[A : Show,
                             B : Show,
@@ -384,20 +386,20 @@ trait ShowTuples
                                                                  k,
                                                                  l,
                                                                  m,
-                                                                 n) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u")"}
+                                                                 n) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u")"}
 
     implicit def showTuple15[A : Show,
                             B : Show,
@@ -441,21 +443,21 @@ trait ShowTuples
                                                                  l,
                                                                  m,
                                                                  n,
-                                                                 o) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u")"}
+                                                                 o) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u")"}
 
     implicit def showTuple16[A : Show,
                             B : Show,
@@ -502,22 +504,22 @@ trait ShowTuples
                                                                  m,
                                                                  n,
                                                                  o,
-                                                                 p) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u", " +
-                                                                               p.toUString + u")"}
+                                                                 p) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u", " +
+                                                                               p + u")"}
 
     implicit def showTuple17[A : Show,
                             B : Show,
@@ -567,23 +569,23 @@ trait ShowTuples
                                                                  n,
                                                                  o,
                                                                  p,
-                                                                 q) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u", " +
-                                                                               p.toUString + u", " +
-                                                                               q.toUString + u")"}
+                                                                 q) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u", " +
+                                                                               p + u", " +
+                                                                               q + u")"}
 
     implicit def showTuple18[A : Show,
                             B : Show,
@@ -636,24 +638,24 @@ trait ShowTuples
                                                                  o,
                                                                  p,
                                                                  q,
-                                                                 r) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u", " +
-                                                                               p.toUString + u", " +
-                                                                               q.toUString + u", " +
-                                                                               r.toUString + u")"}
+                                                                 r) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u", " +
+                                                                               p + u", " +
+                                                                               q + u", " +
+                                                                               r + u")"}
 
     implicit def showTuple19[A : Show,
                             B : Show,
@@ -709,25 +711,25 @@ trait ShowTuples
                                                                  p,
                                                                  q,
                                                                  r,
-                                                                 s) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u", " +
-                                                                               p.toUString + u", " +
-                                                                               q.toUString + u", " +
-                                                                               r.toUString + u", " +
-                                                                               s.toUString + u")"}
+                                                                 s) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u", " +
+                                                                               p + u", " +
+                                                                               q + u", " +
+                                                                               r + u", " +
+                                                                               s + u")"}
 
     implicit def showTuple20[A : Show,
                             B : Show,
@@ -786,26 +788,26 @@ trait ShowTuples
                                                                  q,
                                                                  r,
                                                                  s,
-                                                                 t) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u", " +
-                                                                               p.toUString + u", " +
-                                                                               q.toUString + u", " +
-                                                                               r.toUString + u", " +
-                                                                               s.toUString + u", " +
-                                                                               t.toUString + u")"}
+                                                                 t) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u", " +
+                                                                               p + u", " +
+                                                                               q + u", " +
+                                                                               r + u", " +
+                                                                               s + u", " +
+                                                                               t + u")"}
 
     implicit def showTuple21[A : Show,
                             B : Show,
@@ -867,27 +869,27 @@ trait ShowTuples
                                                                  r,
                                                                  s,
                                                                  t,
-                                                                 u) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u", " +
-                                                                               p.toUString + u", " +
-                                                                               q.toUString + u", " +
-                                                                               r.toUString + u", " +
-                                                                               s.toUString + u", " +
-                                                                               t.toUString + u", " +
-                                                                               u.toUString + u")"}
+                                                                 u) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u", " +
+                                                                               p + u", " +
+                                                                               q + u", " +
+                                                                               r + u", " +
+                                                                               s + u", " +
+                                                                               t + u", " +
+                                                                               u + u")"}
 
     implicit def showTuple22[A : Show,
                             B : Show,
@@ -952,27 +954,26 @@ trait ShowTuples
                                                                  s,
                                                                  t,
                                                                  u,
-                                                                 v) =>  u"(" + a.toUString + u", " +
-                                                                               b.toUString + u", " +
-                                                                               c.toUString + u", " +
-                                                                               d.toUString + u", " +
-                                                                               e.toUString + u", " +
-                                                                               f.toUString + u", " +
-                                                                               g.toUString + u", " +
-                                                                               h.toUString + u", " +
-                                                                               i.toUString + u", " +
-                                                                               j.toUString + u", " +
-                                                                               k.toUString + u", " +
-                                                                               l.toUString + u", " +
-                                                                               m.toUString + u", " +
-                                                                               n.toUString + u", " +
-                                                                               o.toUString + u", " +
-                                                                               p.toUString + u", " +
-                                                                               q.toUString + u", " +
-                                                                               r.toUString + u", " +
-                                                                               s.toUString + u", " +
-                                                                               t.toUString + u", " +
-                                                                               u.toUString + u", " +
-                                                                               v.toUString + u")"}
-
+                                                                 v) =>  u"(" + a + u", " +
+                                                                               b + u", " +
+                                                                               c + u", " +
+                                                                               d + u", " +
+                                                                               e + u", " +
+                                                                               f + u", " +
+                                                                               g + u", " +
+                                                                               h + u", " +
+                                                                               i + u", " +
+                                                                               j + u", " +
+                                                                               k + u", " +
+                                                                               l + u", " +
+                                                                               m + u", " +
+                                                                               n + u", " +
+                                                                               o + u", " +
+                                                                               p + u", " +
+                                                                               q + u", " +
+                                                                               r + u", " +
+                                                                               s + u", " +
+                                                                               t + u", " +
+                                                                               u + u", " +
+                                                                               v + u")"}
 }

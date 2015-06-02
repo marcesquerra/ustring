@@ -8,7 +8,8 @@ import scala.collection.mutable.Builder
 /**
  * Created by Marc Esquerrà on 30/07/2014.
  */
-package object ustring extends ShowCollections
+package object ustring extends ShowStrings
+                          with ShowCollections
                           with ShowTuples
                           with ShowPrimitives
 {
@@ -17,20 +18,17 @@ package object ustring extends ShowCollections
         def toUString(implicit show: Show[A]):UString = show.toUString(a)
     }
 
-    implicit class ShowStringHelper(val a: String) extends AnyVal {
-        def toUString:UString = UString(a)
-    }
-
     implicit class UStringHelper(val sc: StringContext) extends AnyVal {
-        def u(args: Any*): UString = UString(sc.parts.head)
+        def u(): UString = UString(sc.parts.head)
     }
 
-    implicit val CanBuildObject: CanBuildFrom[UString, UCharacter, UString] = new CanBuildFrom[UString, UCharacter, UString]()
+    implicit val CanBuildObject: CanBuildFrom[UString, UChar, UString] = new CanBuildFrom[UString, UChar, UString]()
     {
-        override def apply(from: UString): Builder[UCharacter, UString] = new UStringBuilder()
+        override def apply(from: UString): Builder[UChar, UString] = new UStringBuilder()
 
-        override def apply(): Builder[UCharacter, UString] = new UStringBuilder()
+        override def apply(): Builder[UChar, UString] = new UStringBuilder()
     }
+
 }
 
 
@@ -39,10 +37,10 @@ import ustring._
 object Sample extends App {
 
     val tmp:UString = u"ABC" + u"DEF" + Seq(Array(Set(u"ABC", u"DCF")), Array(Set(u"A"))) + (u"ABC", u"CDE", u"CDE", u"CDE", u"CDE", u"CDE", u"CDE", u"CDE") + Map(3 -> u"Abc") + false
-
-    List()
-
-    println(tmp.map(_.toUpper))
+//
+//    List()
+//
+    println(tmp.map(_.toUpperCase))
 
 
 //    def generate(count: Int) {
